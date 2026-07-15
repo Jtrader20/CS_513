@@ -1,0 +1,3 @@
+/Data/NYPL-menus/*.csv
+__pycache__/
+violations.json
