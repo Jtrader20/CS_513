@@ -1,5 +1,6 @@
 from .data_column import DataColumn
 from pathlib import Path
+from typing import Self
 import pandas as pd
 
 class DataFile:
@@ -15,8 +16,9 @@ class DataFile:
             columns.append(col.get_column_report(self._data_frame))
         return columns
 
-    def add_column(self, column: DataColumn):
+    def add_column(self, column: DataColumn) -> Self:
         self._columns.append(column)
+        return self
 
     def get_file_report(self) -> dict:
         return {

@@ -11,39 +11,39 @@ DATA_DIR = ROOT_DIR / "Data" / "NYPL-menus"
 MENU_PAGE = DATA_DIR / "MenuPage.csv"
 
 def get_menu_page_table() -> DataFile:
-    file = DataFile("MenuPage", MENU_PAGE)
+    id = DataColumn("id").add_potential_violation(MissingValuesViolation())
 
-    id = DataColumn("id")
-    id.add_potential_violation(MissingValuesViolation())
+    menu_id = DataColumn("menu_id").add_potential_violation(MissingValuesViolation())
 
-    menu_id = DataColumn("menu_id")
-    menu_id.add_potential_violation(MissingValuesViolation())
+    page_number = DataColumn("page_number").add_potential_violation(MissingValuesViolation())
 
-    page_number = DataColumn("page_number")
-    page_number.add_potential_violation(MissingValuesViolation())
+    image_id = DataColumn("image_id").add_potential_violation(MissingValuesViolation())
 
-    image_id = DataColumn("image_id")
-    image_id.add_potential_violation(MissingValuesViolation())
+    full_height = (
+        DataColumn("full_height")
+            .add_potential_violation(MissingValuesViolation())
+            .add_potential_violation(TypeMismatchViolation([TypeMismatch.FLOAT, TypeMismatch.INTEGER]))
+            .add_potential_violation(NumberLowerBoundViolation(0))
+    )
 
-    full_height = DataColumn("full_height")
-    full_height.add_potential_violation(MissingValuesViolation())
-    full_height.add_potential_violation(TypeMismatchViolation([TypeMismatch.FLOAT, TypeMismatch.INTEGER]))
-    full_height.add_potential_violation(NumberLowerBoundViolation(0))
+    full_width = (
+        DataColumn("full_width")
+            .add_potential_violation(MissingValuesViolation())
+            .add_potential_violation(TypeMismatchViolation([TypeMismatch.FLOAT, TypeMismatch.INTEGER]))
+            .add_potential_violation(NumberLowerBoundViolation(0))
+    )
 
-    full_width = DataColumn("full_width")
-    full_width.add_potential_violation(MissingValuesViolation())
-    full_width.add_potential_violation(TypeMismatchViolation([TypeMismatch.FLOAT, TypeMismatch.INTEGER]))
-    full_width.add_potential_violation(NumberLowerBoundViolation(0))
+    uuid = DataColumn("uuid").add_potential_violation(MissingValuesViolation())
 
-    uuid = DataColumn("uuid")
-    uuid.add_potential_violation(MissingValuesViolation())
-
-    file.add_column(id)
-    file.add_column(menu_id)
-    file.add_column(page_number)
-    file.add_column(image_id)
-    file.add_column(full_height)
-    file.add_column(full_width)
-    file.add_column(uuid)
+    file = (
+        DataFile("MenuPage", MENU_PAGE)
+            .add_column(id)
+            .add_column(menu_id)
+            .add_column(page_number)
+            .add_column(image_id)
+            .add_column(full_height)
+            .add_column(full_width)
+            .add_column(uuid)
+    )
 
     return file

@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from pandas import DataFrame, Series
+from pandas import Series
 
 class Violation(ABC):
     def __init__(self):
@@ -12,10 +12,13 @@ class Violation(ABC):
     def _get_name(self) -> str:
         return self._name
 
-    def get_violation_report(self, data_frame: DataFrame, column_name: str) -> dict:
-        col = data_frame[column_name].copy()
-
-        return self.test_for_violation(col)
+    def get_violation_report(self, col: Series) -> dict:
+        violation_indexes = self.test_for_violation(col)
+        return {
+            "violation": self._get_name(),
+            "count": len(violation_indexes)
+            # "row_indexes": violation_indexes
+        }
     
     @abstractmethod
     def test_for_violation(self, data_frame: Series) -> dict:

@@ -1,0 +1,542 @@
+{
+    "files": [
+        {
+            "name": "Dish",
+            "columns": [
+                {
+                    "name": "id",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "description",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 423397
+                        }
+                    ]
+                },
+                {
+                    "name": "menus_appeared",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "times_appeared",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 21
+                        }
+                    ]
+                },
+                {
+                    "name": "first_appeared",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 55492
+                        },
+                        {
+                            "violation": "Upper Bound",
+                            "count": 11
+                        }
+                    ]
+                },
+                {
+                    "name": "last_appeared",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 55321
+                        },
+                        {
+                            "violation": "Upper Bound",
+                            "count": 179
+                        }
+                    ]
+                },
+                {
+                    "name": "lowest_price",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 29100
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Upper Bound",
+                            "count": 252
+                        }
+                    ]
+                },
+                {
+                    "name": "highest_price",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 29100
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Upper Bound",
+                            "count": 150
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Menu",
+            "columns": [
+                {
+                    "name": "id",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 14348
+                        }
+                    ]
+                },
+                {
+                    "name": "sponsor",
+                    "violations": []
+                },
+                {
+                    "name": "event",
+                    "violations": []
+                },
+                {
+                    "name": "venue",
+                    "violations": []
+                },
+                {
+                    "name": "place",
+                    "violations": []
+                },
+                {
+                    "name": "physical_description",
+                    "violations": []
+                },
+                {
+                    "name": "occasion",
+                    "violations": []
+                },
+                {
+                    "name": "notes",
+                    "violations": []
+                },
+                {
+                    "name": "call_number",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 1562
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Regex Format",
+                            "count": 14087
+                        }
+                    ]
+                },
+                {
+                    "name": "keywords",
+                    "violations": [
+                        {
+                            "violation": "Regex Format",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "language",
+                    "violations": []
+                },
+                {
+                    "name": "date",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 586
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Regex Format",
+                            "count": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "location_type",
+                    "violations": []
+                },
+                {
+                    "name": "currency",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 11089
+                        }
+                    ]
+                },
+                {
+                    "name": "currency_symbol",
+                    "violations": []
+                },
+                {
+                    "name": "status",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "page_count",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "dish_count",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MenuItem",
+            "columns": [
+                {
+                    "name": "id",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "menu_page_id",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "price",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 445916
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Upper Bound",
+                            "count": 9169
+                        }
+                    ]
+                },
+                {
+                    "name": "high_price",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 1240821
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Upper Bound",
+                            "count": 827
+                        }
+                    ]
+                },
+                {
+                    "name": "dish_id",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 241
+                        }
+                    ]
+                },
+                {
+                    "name": "created_at",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Regex Format",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "updated_at",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Regex Format",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "xpos",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "ypos",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MenuPage",
+            "columns": [
+                {
+                    "name": "id",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "menu_id",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "page_number",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 1202
+                        }
+                    ]
+                },
+                {
+                    "name": "image_id",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "full_height",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 329
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "full_width",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 329
+                        },
+                        {
+                            "violation": "Type Mismatch",
+                            "count": 0
+                        },
+                        {
+                            "violation": "Lower Bound",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "uuid",
+                    "violations": [
+                        {
+                            "violation": "Missing Values",
+                            "count": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

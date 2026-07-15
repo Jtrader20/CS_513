@@ -12,13 +12,9 @@ DATA_DIR = ROOT_DIR / "Data" / "NYPL-menus"
 MENU = DATA_DIR / "Menu.csv"
 
 def get_menu_table() -> DataFile:
-    file = DataFile("Menu", MENU)
+    id = DataColumn("id").add_potential_violation(MissingValuesViolation())
 
-    id = DataColumn("id")
-    id.add_potential_violation(MissingValuesViolation())
-
-    name = DataColumn("name")
-    name.add_potential_violation(MissingValuesViolation())
+    name = DataColumn("name").add_potential_violation(MissingValuesViolation())
 
     sponsor = DataColumn("sponsor")
 
@@ -34,59 +30,67 @@ def get_menu_table() -> DataFile:
 
     notes = DataColumn("notes")
 
-    call_number = DataColumn("call_number")
-    call_number.add_potential_violation(MissingValuesViolation())
-    call_number.add_potential_violation(TypeMismatchViolation([TypeMismatch.STRING]))
-    call_number.add_potential_violation(RegexFormatViolation(r"(1|2)[0-9]{3}-(1|2)[0-9]{3}"))
+    call_number = (
+        DataColumn("call_number")
+            .add_potential_violation(MissingValuesViolation())
+            .add_potential_violation(TypeMismatchViolation([TypeMismatch.STRING]))
+            .add_potential_violation(RegexFormatViolation(r"(1|2)[0-9]{3}-(1|2)[0-9]{3}"))
+    )
 
-    keywords = DataColumn("keywords")
-    keywords.add_potential_violation(RegexFormatViolation(r"(?:[A-Z0-9.]+; ?)*"))
+    keywords = DataColumn("keywords").add_potential_violation(RegexFormatViolation(r"(?:[A-Z0-9.]+; ?)*"))
 
     language = DataColumn("language")
 
-    date = DataColumn("date")
-    date.add_potential_violation(MissingValuesViolation())
-    date.add_potential_violation(TypeMismatchViolation([TypeMismatch.STRING]))
-    date.add_potential_violation(RegexFormatViolation(r"(?:1|2)[0-9]{3}-(?:0|1)[0-9]-(?:0|1|2|3)[0-9]"))
+    date = (
+        DataColumn("date")
+            .add_potential_violation(MissingValuesViolation())
+            .add_potential_violation(TypeMismatchViolation([TypeMismatch.STRING]))
+            .add_potential_violation(RegexFormatViolation(r"(?:1|2)[0-9]{3}-(?:0|1)[0-9]-(?:0|1|2|3)[0-9]"))
+    )
 
     location_type = DataColumn("location_type")
 
-    currency = DataColumn("currency")
-    currency.add_potential_violation(MissingValuesViolation())
+    currency = DataColumn("currency").add_potential_violation(MissingValuesViolation())
 
     currency_symbol = DataColumn("currency_symbol")
 
-    status = DataColumn("status")
-    status.add_potential_violation(MissingValuesViolation())
+    status = DataColumn("status").add_potential_violation(MissingValuesViolation())
 
-    page_count = DataColumn("page_count")
-    page_count.add_potential_violation(MissingValuesViolation())
-    page_count.add_potential_violation(TypeMismatchViolation([TypeMismatch.INTEGER]))
-    page_count.add_potential_violation(NumberLowerBoundViolation(0))
+    page_count = (
+        DataColumn("page_count")
+            .add_potential_violation(MissingValuesViolation())
+            .add_potential_violation(TypeMismatchViolation([TypeMismatch.INTEGER]))
+            .add_potential_violation(NumberLowerBoundViolation(0))
+    ) 
 
-    dish_count = DataColumn("dish_count")
-    dish_count.add_potential_violation(MissingValuesViolation())
-    dish_count.add_potential_violation(TypeMismatchViolation([TypeMismatch.INTEGER]))
-    dish_count.add_potential_violation(NumberLowerBoundViolation(0))
+    dish_count = (
+        DataColumn("dish_count")
+            .add_potential_violation(MissingValuesViolation())
+            .add_potential_violation(TypeMismatchViolation([TypeMismatch.INTEGER]))
+            .add_potential_violation(NumberLowerBoundViolation(0))
+    )
 
-    file.add_column(id)
-    file.add_column(name)
-    file.add_column(sponsor)
-    file.add_column(event)
-    file.add_column(venue)
-    file.add_column(place)
-    file.add_column(physical_description)
-    file.add_column(occasion)
-    file.add_column(notes)
-    file.add_column(call_number)
-    file.add_column(keywords)
-    file.add_column(language)
-    file.add_column(date)
-    file.add_column(location_type)
-    file.add_column(currency)
-    file.add_column(currency_symbol)
-    file.add_column(status)
-    file.add_column(page_count)
-    file.add_column(dish_count)
+    file = (
+        DataFile("Menu", MENU)
+            .add_column(id)
+            .add_column(name)
+            .add_column(sponsor)
+            .add_column(event)
+            .add_column(venue)
+            .add_column(place)
+            .add_column(physical_description)
+            .add_column(occasion)
+            .add_column(notes)
+            .add_column(call_number)
+            .add_column(keywords)
+            .add_column(language)
+            .add_column(date)
+            .add_column(location_type)
+            .add_column(currency)
+            .add_column(currency_symbol)
+            .add_column(status)
+            .add_column(page_count)
+            .add_column(dish_count)
+    )
 
     return file

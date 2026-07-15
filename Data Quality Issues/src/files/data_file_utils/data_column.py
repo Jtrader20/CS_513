@@ -1,13 +1,15 @@
 from src.files.violations.violation import Violation
 from pandas import DataFrame
+from typing import Self
 
 class DataColumn:
     def __init__(self, column_name: str):
         self._name = column_name
         self._potential_violations: list[Violation] = []
 
-    def add_potential_violation(self, violation: Violation):
+    def add_potential_violation(self, violation: Violation) -> Self:
         self._potential_violations.append(violation)
+        return self
 
     def get_column_report(self, data_frame: DataFrame) -> dict:
         return {
@@ -17,8 +19,9 @@ class DataColumn:
 
     def _get_violations_report(self, data_frame: DataFrame) -> list:
         violations: list = []
+        col = data_frame[self._name].copy()
         for p_violation in self._potential_violations:
-            violations.append(p_violation.get_violation_report(data_frame, self._name))
+            violations.append(p_violation.get_violation_report(col))
         return violations
 
     pass
